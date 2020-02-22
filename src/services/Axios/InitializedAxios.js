@@ -1,35 +1,35 @@
 // 3rd Party Libraries
-import axios from 'axios';
+import axios from 'axios'
 
 const _axios = axios.create({
-  baseURL: 'toss-frontend-assignment.herokuapp.com',
+  baseURL: 'https://toss-frontend-assignment.herokuapp.com',
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json'
   }
-});
+})
 
 _axios.interceptors.request.use(
   (config) => {
-    return config;
+    return config
   },
   (error) => {
-    return Promise.reject(error);
+    return Promise.reject(error)
   }
-);
+)
 
 _axios.interceptors.response.use(
   (response) => {
-    const responseData = response.data;
+    const responseData = response.data
     if (parseInt(response.status, 10) === 200) {
-      return responseData;
+      return responseData
     } else {
       const error = {
         status: response.status || 500,
         title: '에러',
-        message: responseData.data.message || '잠시 후 다시 시도해주세요.',
-      };
-      return Promise.reject(error);
+        message: responseData.data.message || '잠시 후 다시 시도해주세요.'
+      }
+      return Promise.reject(error)
     }
   },
   (error) => {
@@ -37,23 +37,23 @@ _axios.interceptors.response.use(
       error = {
         status: 400,
         title: '요청시간이 초과되었습니다.',
-        message: '잠시 후 다시 이용해주세요.',
-      };
+        message: '잠시 후 다시 이용해주세요.'
+      }
     } else if (error.message.indexOf('Network Error') >= 0) {
       error = {
         status: 400,
         title: '네트워크 연결이 원활하지 않습니다.',
-        message: '잠시 후 다시 이용해주세요.',
-      };
+        message: '잠시 후 다시 이용해주세요.'
+      }
     } else {
       error = {
         status: error.status || 500,
         title: error.title || '네트워크 연결이 원활하지 않습니다.',
-        message: error.message || '잠시후 다시 이용해주세요.',
-      };
+        message: error.message || '잠시후 다시 이용해주세요.'
+      }
     }
-    return Promise.reject(error);
+    return Promise.reject(error)
   }
-);
+)
 
-export default _axios;
+export default _axios
