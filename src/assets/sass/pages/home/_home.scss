@@ -1,0 +1,34 @@
+/**
+ * @summary Home 컴포넌트에 대한 CSS
+ */
+
+.home-widget {
+	display: flex;
+	align-items: stretch;
+	justify-items: stretch;
+	flex-direction: column;
+	height: 100%;
+	.amount-widget {
+		display: flex;
+		height: 100%;
+		.amount-box {
+			margin: auto;
+			color: $dark;
+			letter-spacing: -0.34px;
+			.amount {
+				font-size: $fSize-xl;
+			}
+			.description {
+				color: $battleship-grey;
+				text-align: center;
+			}
+			.currency {
+				margin: 0 0 0 6px;
+				font-size: 43px;
+			}
+		}
+	}
+	.keyboard-widget {
+		padding: 0 24px 34px;
+	}
+}

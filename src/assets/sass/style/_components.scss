@@ -1,0 +1,23 @@
+.keyboard {
+	overflow: hidden;
+	button {
+		float: left;
+		width: 33.33%;
+		height: 68px;
+	}
+	span {
+		display: block;
+		height: 100%;
+		font-size: 30px;
+		line-height: 68px;
+		vertical-align: middle;
+		color: #585865;
+		&.cancel-text {
+			font-size: 17px;
+		}
+	}
+	img {
+		display: block;
+		margin: 22px auto;
+	}
+}
