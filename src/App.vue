@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="app-wrap">
-      <router-view name="header"></router-view>
       <router-view name="contents"></router-view>
     </div>
   </div>

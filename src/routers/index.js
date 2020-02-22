@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// layout
-import Header from '@/common/Header.vue'
 // contents
 import Home from '@/pages/Home.vue'
 import Accounts from '@/pages/Accounts/Accounts.vue'
@@ -21,7 +19,6 @@ const routes = [
     path: '/accounts',
     name: 'Accounts',
     components: {
-      header: Header,
       contents: Accounts
     }
   },
@@ -29,7 +26,6 @@ const routes = [
     path: '/accounts/my',
     name: 'AccountsMy',
     components: {
-      header: Header,
       contents: AccountsMy
     }
   }

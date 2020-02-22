@@ -12,7 +12,7 @@
       <span v-if="value === 12"
             @click="touchClearhandler">
         <img src="../../assets/svg/icn-navigation-android-back.svg"
-             class="icn-navigation-android-back">       
+             class="icn-navigation-back">       
       </span>
     </button>
   </div>
