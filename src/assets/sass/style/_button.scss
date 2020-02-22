@@ -11,20 +11,3 @@
     border-radius: 3px;
     background-color: $bgColor !important;
 }
-
-.success-button {
-	display: block;
-	width: 100%;
-	height: 56px;
-	margin: 24px 0 0;
-	font-size: $fSize-s;
-	color: $white;
-	text-align: center;
-	background-color: $dodger-blue;
-	border-radius: 6px;
-	&:disabled {
-		color: $white;
-		border-color: $light-blue-grey;
-		background-color: $light-blue-grey;
-	}
-}

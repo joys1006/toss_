@@ -17,10 +17,18 @@
 			letter-spacing: -0.34px;
 			.amount {
 				font-size: $fSize-xl;
+				text-align: center;
 			}
 			.description {
+				height: 19px;
+				font-size: 13px;
 				color: $battleship-grey;
 				text-align: center;
+				opacity: 0;
+				transition: 0.5s;
+				&.active {
+					opacity: 1;
+				}
 			}
 			.currency {
 				margin: 0 0 0 6px;

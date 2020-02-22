@@ -1,0 +1,34 @@
+.accounts-my-widget {
+	display: flex;
+	align-items: stretch;
+	justify-items: stretch;
+	flex-direction: column;
+	height: 100%;
+	.contents-wrap {
+		display: flex;
+		align-items: stretch;
+		justify-items: stretch;
+		flex-direction: column;
+		height: 100%;
+		padding: 40px 24px;
+		.selected-accounts-information {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			height: 100%;
+			.information-text {
+				font-size: $fSize-m;
+				color: $dark;
+			}
+			.description {
+				margin: 16px 0 0;
+				font-size: 13px;
+				color: $battleship-grey;
+			}
+			.ant-avatar {
+				width: 64px;
+				height: 64px;
+			}
+		}
+	}
+}

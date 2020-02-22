@@ -5,8 +5,8 @@
 
  // base (베이스css에만 적용)
 $baseFont:'Nanum Square';
-$defaultSize: 16px;
-$baseFontSize: 16px;
+$defaultSize: 17px;
+$baseFontSize: 17px;
 $baseColor: #354052;
 $baseColorHover:#1abcb0;
 
@@ -32,7 +32,7 @@ $black-4: rgba(0, 0, 0, 0.04);
 $white: #fff;
 
 
-.icn-navigation-android-back {
+.icn-navigation-back {
 	width: 24px;
 	height: 24px;
 	object-fit: contain;

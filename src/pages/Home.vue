@@ -3,7 +3,7 @@
     <div class="amount-widget">
       <div class="amount-box">
         <p class="amount">{{ amount | comma('kr') }}<span class="currency">원</span></p>
-        <p class="description">{{ message }}</p>
+        <p class="description" :class="{ active : isMessage }">최대 200만원까지 입력할 수 있습니다.</p>
       </div>
     </div>
     <div class="keyboard-widget">
@@ -12,13 +12,19 @@
                 :touchClearhandler="keyboardClearEvent" />
       <a-button type="primary"
                 :disabled="disabled"
-                class="success-button">보내기</a-button>
+                class="success-button"
+                @click="successEvent">보내기</a-button>
     </div>
   </div>
 </template>
 
 <script>
+// 3rd party libaray
+import { mapMutations, mapGetters } from 'vuex'
+// components
 import Keyboard from '@/components/Keyboard/Keyboard'
+// stores
+import { GET_AMOUNT, SET_AMOUNT } from '@/stores/modules/accounts.module'
 
 export default {
   name: 'Home',
@@ -32,13 +38,16 @@ export default {
     }
   },
   computed: {
+    ...mapGetters({
+      getAmount: GET_AMOUNT
+    }),
     disabled () {
       return !this.amount
     },
-    message () {
-      let result = ''
+    isMessage () {
+      let result = false
       if (Number(this.amount) === this.max) {
-        result = '최대 200만원까지 입력할 수 있습니다.'
+        result = true
       }
 
       return result
@@ -65,7 +74,14 @@ export default {
       const amount = this.amount.split('')
       amount.pop()
       this.amount = amount.join('')
-    }
+    },
+    successEvent () {
+      this.setAmount(this.amount)
+      this.$router.push({ name: 'Accounts' })
+    },
+    ...mapMutations({
+      setAmount: SET_AMOUNT
+    })
   }
 }
 </script>
