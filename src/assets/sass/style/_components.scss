@@ -5,6 +5,11 @@
 		float: left;
 		width: 33.33%;
 		height: 68px;
+		&:active {
+			span {
+				color: $battleship-grey;
+			}
+		}
 	}
 	span {
 		display: block;

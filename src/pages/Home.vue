@@ -7,7 +7,8 @@
       </div>
     </div>
     <div class="keyboard-widget">
-      <keyboard :touchAddEventHandler="keyboardAddEvent"
+      <keyboard :amount="amount"
+                :touchAddEventHandler="keyboardAddEvent"
                 :touchClearAllhandler="keyboardClearAllEvent"
                 :touchClearhandler="keyboardClearEvent" />
       <a-button type="primary"

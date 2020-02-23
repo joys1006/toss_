@@ -6,10 +6,10 @@
             :key="value">
       <span v-if="value < 10 || value === 11"
             @click="touchAddEventHandler(valueFilter(value))">{{ valueFilter(value) }}</span>
-      <span v-else-if="value === 10"
+      <span v-else-if="value === 10 && amount"
             class="cancel-text"
             @click="touchClearAllhandler">취소</span>
-      <span v-if="value === 12"
+      <span v-if="value === 12 && amount"
             @click="touchClearhandler">
         <img src="../../assets/svg/icn-navigation-android-back.svg"
              class="icn-navigation-back">       
@@ -20,9 +20,14 @@
 
 <script>
 export default {
-
   name: 'Keyboard',
   props: {
+    amount: {
+      type: String,
+      default: () => {
+        return false
+      }
+    },
     touchAddEventHandler: {
       type: Function,
       default: (value) => {

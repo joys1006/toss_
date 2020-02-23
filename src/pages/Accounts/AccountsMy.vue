@@ -14,6 +14,7 @@
                   :src="getSelectedAccount.bankImageUrl"/>
       </div>
       <div class="list-widget">
+        <h4>출금 계좌</h4>
         <a-list itemLayout="horizontal"
                 :loading="loading"
                 :dataSource="getAccountsMyData">
