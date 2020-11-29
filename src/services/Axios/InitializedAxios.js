@@ -1,8 +1,7 @@
 // 3rd Party Libraries
 import axios from 'axios'
-
+// 'https://toss-frontend-assignment.herokuapp.com'
 const _axios = axios.create({
-  baseURL: 'https://toss-frontend-assignment.herokuapp.com',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
